@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+    body{
+        background: #ccc;
+        
+    }
+    .menu{
+        padding: 1.3rem;
+        background: #000;
+        display: flex;
+    }
+    .menubar{
+        width: 100%;
+        display: flex;
+        position:absolute;
+        height: 0;
+        transition: .5s;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+
+
+    }
+    .logo{
+        width: 100%;
+        font-size:x-large;
+        letter-spacing: .24rem;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    .btn{
+        background: rgb(56, 56, 228);
+        margin-left: -1px;
+    }
+
+.items{
+    width: 100%;
+    margin:.5rem;
+    background: #b5f5f5;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+.actived{
+    height: 170px;
+    opacity: 1;
+}
+li{
+    padding: 1rem;
+    box-shadow: #000 2px 3px 4px;
+    color:#000;
+}
+.bar{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    margin: .4rem;
+    transition: .2s;
+    
+}
+.menu.active .bar:nth-child(2){
+    opacity: 0;
+}
+.menu.active .bar:nth-child(1){
+    transform: translateY(10px) rotate(45deg);
+}
+.menu.active .bar:nth-child(3){
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+</style>
+
+
+<body>
+    <header>
+        <div class="menu">
+            <div class="logo">LOGO SITE</div>
+        
+            <div class="btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+
+            </div>
+        </div>
+        <div class="menubar">
+            
+            <ul class="items">
+                <li>Home</li>
+                <li>Contacts</li>
+                <li>About</li>
+            </ul>
+        </div>
+
+    </header>
+    
+    <script>
+
+        const s = (el) => document.querySelector(el);
+        const sa = (el) => document.querySelectorAll(el);
+
+        let menu = s('.menubar');
+        let efect = s(".menu");
+        
+    
+            s('.btn').addEventListener('click', ()=> {
+                menu.classList.toggle('actived');
+            })
+            s('.btn').addEventListener('click', ()=> {
+                efect.classList.toggle('active');
+            })
+
+
+
+
+    </script>
+</body>
+</html>
